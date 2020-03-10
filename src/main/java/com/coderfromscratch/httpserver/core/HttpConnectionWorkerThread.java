@@ -27,7 +27,7 @@ public class HttpConnectionWorkerThread extends Thread {
 
             String html = "<html><head><title>Simple Java HTTP Server</title></head><body><h1>This page was served using my Simple Java HTTP Server</h1></body></html>";
 
-            final String CRLF = "\n\r"; // 13, 10
+            final String CRLF = "\r\n"; // 13, 10
 
             String response =
                     "HTTP/1.1 200 OK" + CRLF + // Status Line  :   HTTTP_VERSION RESPONSE_CODE RESPONSE_MESSAGE
