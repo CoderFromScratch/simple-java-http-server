@@ -9,9 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 
 /**
- *
  * Driver Class for the Http Server
- *
  */
 public class HttpServer {
 
@@ -27,14 +25,8 @@ public class HttpServer {
         LOGGER.info("Using Port: " + conf.getPort());
         LOGGER.info("Using WebRoot: " + conf.getWebroot());
 
-        try {
-            ServerListenerThread serverListenerThread = new ServerListenerThread(conf.getPort(), conf.getWebroot());
-            serverListenerThread.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-            // TODO handle later.
-        }
-
+        ServerListenerThread serverListenerThread = new ServerListenerThread(conf.getPort(), conf.getWebroot());
+        serverListenerThread.start();
 
     }
 
