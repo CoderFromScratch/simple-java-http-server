@@ -23,18 +23,6 @@ public class Json {
         return myObjectMapper.treeToValue(node, clazz);
     }
 
-    public static JsonNode toJson(Object obj) {
-        return myObjectMapper.valueToTree(obj);
-    }
-
-    public static String stringify(JsonNode node) throws JsonProcessingException {
-        return generateJson(node, false);
-    }
-
-    public static String stringifyPretty(JsonNode node) throws JsonProcessingException {
-        return generateJson(node, true);
-    }
-
     private static String generateJson(Object o, boolean pretty) throws JsonProcessingException {
         ObjectWriter objectWriter = myObjectMapper.writer();
         if (pretty) {
