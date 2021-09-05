@@ -32,10 +32,10 @@ class HttpParserTest {
         }
 
         assertNotNull(request);
-        assertEquals(request.getMethod(), HttpMethod.GET);
-        assertEquals(request.getRequestTarget(), "/");
-        assertEquals(request.getOriginalHttpVersion(), "HTTP/1.1");
-        assertEquals(request.getBestCompatibleHttpVersion(), HttpVersion.HTTP_1_1);
+        assertEquals(HttpMethod.GET, request.getMethod());
+        assertEquals("/", request.getRequestTarget());
+        assertEquals("HTTP/1.1", request.getOriginalHttpVersion());
+        assertEquals(HttpVersion.HTTP_1_1, request.getBestCompatibleHttpVersion());
     }
 
     @Test
@@ -46,7 +46,7 @@ class HttpParserTest {
             );
             fail();
         } catch (HttpParsingException e) {
-            assertEquals(e.getErrorCode(), HttpStatusCode.SERVER_ERROR_501_NOT_IMPLEMENTED);
+            assertEquals(HttpStatusCode.SERVER_ERROR_501_NOT_IMPLEMENTED, e.getErrorCode());
         }
     }
 
@@ -58,7 +58,7 @@ class HttpParserTest {
             );
             fail();
         } catch (HttpParsingException e) {
-            assertEquals(e.getErrorCode(), HttpStatusCode.SERVER_ERROR_501_NOT_IMPLEMENTED);
+            assertEquals(HttpStatusCode.SERVER_ERROR_501_NOT_IMPLEMENTED, e.getErrorCode());
         }
     }
 
@@ -70,7 +70,7 @@ class HttpParserTest {
             );
             fail();
         } catch (HttpParsingException e) {
-            assertEquals(e.getErrorCode(), HttpStatusCode.CLIENT_ERROR_400_BAD_REQUEST);
+            assertEquals(HttpStatusCode.CLIENT_ERROR_400_BAD_REQUEST, e.getErrorCode());
         }
     }
 
@@ -82,7 +82,7 @@ class HttpParserTest {
             );
             fail();
         } catch (HttpParsingException e) {
-            assertEquals(e.getErrorCode(), HttpStatusCode.CLIENT_ERROR_400_BAD_REQUEST);
+            assertEquals(HttpStatusCode.CLIENT_ERROR_400_BAD_REQUEST, e.getErrorCode());
         }
     }
 
@@ -94,7 +94,7 @@ class HttpParserTest {
             );
             fail();
         } catch (HttpParsingException e) {
-            assertEquals(e.getErrorCode(), HttpStatusCode.CLIENT_ERROR_400_BAD_REQUEST);
+            assertEquals(HttpStatusCode.CLIENT_ERROR_400_BAD_REQUEST, e.getErrorCode());
         }
     }
 
@@ -106,7 +106,7 @@ class HttpParserTest {
             );
             fail();
         } catch (HttpParsingException e) {
-            assertEquals(e.getErrorCode(), HttpStatusCode.CLIENT_ERROR_400_BAD_REQUEST);
+            assertEquals(HttpStatusCode.CLIENT_ERROR_400_BAD_REQUEST, e.getErrorCode());
         }
     }
 
@@ -118,7 +118,7 @@ class HttpParserTest {
             );
             fail();
         } catch (HttpParsingException e) {
-            assertEquals(e.getErrorCode(), HttpStatusCode.SERVER_ERROR_505_HTTP_VERSION_NOT_SUPPORTED);
+            assertEquals(HttpStatusCode.SERVER_ERROR_505_HTTP_VERSION_NOT_SUPPORTED, e.getErrorCode());
         }
     }
 
@@ -129,8 +129,8 @@ class HttpParserTest {
                     generateSupportedHttpVersion1()
             );
             assertNotNull(request);
-            assertEquals(request.getBestCompatibleHttpVersion(), HttpVersion.HTTP_1_1);
-            assertEquals(request.getOriginalHttpVersion(), "HTTP/1.2");
+            assertEquals(HttpVersion.HTTP_1_1, request.getBestCompatibleHttpVersion());
+            assertEquals("HTTP/1.2", request.getOriginalHttpVersion());
         } catch (HttpParsingException e) {
             fail();
         }
