@@ -41,7 +41,7 @@ class HttpParserTest {
     @Test
     void parseHttpRequestBadMethod1() {
         try {
-            HttpRequest request = httpParser.parseHttpRequest(
+            httpParser.parseHttpRequest(
                     generateBadTestCaseMethodName1()
             );
             fail();
@@ -53,7 +53,7 @@ class HttpParserTest {
     @Test
     void parseHttpRequestBadMethod2() {
         try {
-            HttpRequest request = httpParser.parseHttpRequest(
+            httpParser.parseHttpRequest(
                     generateBadTestCaseMethodName2()
             );
             fail();
@@ -65,7 +65,7 @@ class HttpParserTest {
     @Test
     void parseHttpRequestInvNumItems1() {
         try {
-            HttpRequest request = httpParser.parseHttpRequest(
+            httpParser.parseHttpRequest(
                     generateBadTestCaseRequestLineInvNumItems1()
             );
             fail();
@@ -77,7 +77,7 @@ class HttpParserTest {
     @Test
     void parseHttpEmptyRequestLine() {
         try {
-            HttpRequest request = httpParser.parseHttpRequest(
+            httpParser.parseHttpRequest(
                     generateBadTestCaseEmptyRequestLine()
             );
             fail();
@@ -89,7 +89,7 @@ class HttpParserTest {
     @Test
     void parseHttpRequestLineCRnoLF() {
         try {
-            HttpRequest request = httpParser.parseHttpRequest(
+            httpParser.parseHttpRequest(
                     generateBadTestCaseRequestLineOnlyCRnoLF()
             );
             fail();
@@ -101,7 +101,7 @@ class HttpParserTest {
     @Test
     void parseHttpRequestBadHttpVersion() {
         try {
-            HttpRequest request = httpParser.parseHttpRequest(
+            httpParser.parseHttpRequest(
                     generateBadHttpVersionTestCase()
             );
             fail();
@@ -113,7 +113,7 @@ class HttpParserTest {
     @Test
     void parseHttpRequestUnsupportedHttpVersion() {
         try {
-            HttpRequest request = httpParser.parseHttpRequest(
+            httpParser.parseHttpRequest(
                     generateUnsuportedHttpVersionTestCase()
             );
             fail();
