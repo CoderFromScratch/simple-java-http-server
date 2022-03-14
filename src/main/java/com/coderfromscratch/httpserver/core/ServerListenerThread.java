@@ -44,7 +44,7 @@ public class ServerListenerThread extends Thread {
             if (serverSocket!=null) {
                 try {
                     serverSocket.close();
-                } catch (IOException e) {}
+                } catch (IOException ignored) {}
             }
         }
 
