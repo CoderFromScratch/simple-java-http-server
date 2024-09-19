@@ -11,7 +11,6 @@ public class HttpRequest extends HttpMessage{
     private String requestTarget;
     private String originalHttpVersion; // literal from the request
     private HttpVersion bestCompatibleHttpVersion;
-    private HashMap<String,String> headers = new HashMap<>();
 
     HttpRequest() {
     }
@@ -32,16 +31,8 @@ public class HttpRequest extends HttpMessage{
         return originalHttpVersion;
     }
 
-    public Set<String> getHeaderNames() {
-        return headers.keySet();
-    }
-
-    public String getHeader(String headerName) {
-        return headers.get(headerName.toLowerCase());
-    }
-
     void setMethod(String methodName) throws HttpParsingException {
-        for (HttpMethod method: HttpMethod.values()) {
+        for (HttpMethod method : HttpMethod.values()) {
             if (methodName.equals(method.name())) {
                 this.method = method;
                 return;
@@ -53,7 +44,7 @@ public class HttpRequest extends HttpMessage{
     }
 
     void setRequestTarget(String requestTarget) throws HttpParsingException {
-        if (requestTarget == null || requestTarget.length()==0) {
+        if (requestTarget == null || requestTarget.length() == 0) {
             throw new HttpParsingException(HttpStatusCode.SERVER_ERROR_500_INTERNAL_SERVER_ERROR);
         }
         this.requestTarget = requestTarget;
@@ -69,7 +60,4 @@ public class HttpRequest extends HttpMessage{
         }
     }
 
-    void addHeader(String headerName, String headerField) {
-        headers.put(headerName.toLowerCase(), headerField);
-    }
 }

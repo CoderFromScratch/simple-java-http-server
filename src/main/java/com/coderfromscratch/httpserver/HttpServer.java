@@ -3,6 +3,7 @@ package com.coderfromscratch.httpserver;
 import com.coderfromscratch.httpserver.config.Configuration;
 import com.coderfromscratch.httpserver.config.ConfigurationManager;
 import com.coderfromscratch.httpserver.core.ServerListenerThread;
+import com.coderfromscratch.httpserver.core.io.WebRootNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,6 +34,8 @@ public class HttpServer {
         } catch (IOException e) {
             e.printStackTrace();
             // TODO handle later.
+        } catch (WebRootNotFoundException e) {
+            LOGGER.error("Webroot folder not found",e);
         }
 
 
