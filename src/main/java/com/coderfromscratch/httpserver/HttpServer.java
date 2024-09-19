@@ -20,9 +20,15 @@ public class HttpServer {
 
     public static void main(String[] args) {
 
+        if (args.length != 1) {
+            LOGGER.error("No configuration file provided.");
+            LOGGER.error("Syntax:  java -jar simplehttpserver-1.0-SNAPSHOT.jar  <config.json>");
+            return;
+        }
+
         LOGGER.info("Server starting...");
 
-        ConfigurationManager.getInstance().loadConfigurationFile("src/main/resources/http.json");
+        ConfigurationManager.getInstance().loadConfigurationFile(args[0]);
         Configuration conf = ConfigurationManager.getInstance().getCurrentConfiguration();
 
         LOGGER.info("Using Port: " + conf.getPort());
