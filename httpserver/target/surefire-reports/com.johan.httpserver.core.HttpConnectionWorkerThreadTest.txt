@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.johan.httpserver.core.HttpConnectionWorkerThreadTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.313 s -- in com.johan.httpserver.core.HttpConnectionWorkerThreadTest

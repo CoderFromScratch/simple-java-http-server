@@ -1,0 +1,3 @@
+com\johan\http\HttpParserTest.class
+com\johan\http\HttpVersionTest.class
+com\johan\httpserver\core\HttpConnectionWorkerThreadTest.class
